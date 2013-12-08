@@ -21,12 +21,6 @@ Or install it yourself as:
 ## Usage
 
     it { should have_representable_property(:name) }
-    it { should have_representable_collection(:children) }
-    it { should have_representable_hash(:preferences) }
-
-With submatchers for addition options
-
-    it { should have_representable_property(:father).class_name("Person").extends(Person::Representer) }
 
 ## Contributing
 
