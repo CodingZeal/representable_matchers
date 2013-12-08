@@ -1,10 +1,10 @@
 # coding: utf-8
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
-require 'representable_matchers'
+require 'matchers/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "representable_matchers"
-  spec.version       = RepresentableMatchers::VERSION
+  spec.version       = Representable::Matchers::VERSION
   spec.authors       = ["Coding Zeal", "Adam Cuppy"]
   spec.email         = ["info@codingzeal.com"]
   spec.description   = %q{Shoulda-style RSpec/Test Unit matchers for the Representable Gem}
