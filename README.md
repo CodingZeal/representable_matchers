@@ -1,6 +1,6 @@
 # Representable Matchers
 
-[![Code Climate](https://codeclimate.com/github/CodingZeal/representable_matchers.png)](https://codeclimate.com/github/CodingZeal/representable_matchers)
+[![Build Status](https://travis-ci.org/CodingZeal/representable_matchers.png?branch=master)](https://travis-ci.org/CodingZeal/representable_matchers) [![Code Climate](https://codeclimate.com/github/CodingZeal/representable_matchers.png)](https://codeclimate.com/github/CodingZeal/representable_matchers)
 
 Shoulda-style RSpec/Test Unit matchers for the Representable Gem
 
