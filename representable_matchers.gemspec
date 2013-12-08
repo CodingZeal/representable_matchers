@@ -1,7 +1,6 @@
 # coding: utf-8
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
-require 'representable_matchers/version'
-require 'representable'
+require 'representable_matchers'
 
 Gem::Specification.new do |spec|
   spec.name          = "representable_matchers"
