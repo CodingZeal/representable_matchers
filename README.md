@@ -22,6 +22,10 @@ Or install it yourself as:
 
     it { should have_representable_property(:name) }
 
+With submatchers
+
+    it { should have_representable_property(:name).class_name("String") }
+
 ## Contributing
 
 1. Fork it
