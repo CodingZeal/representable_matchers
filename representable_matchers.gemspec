@@ -1,6 +1,5 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+$LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 require 'representable_matchers/version'
 require 'representable'
 
