@@ -1,6 +1,8 @@
 require "spec_helper"
 
 describe Representable::Matchers::RepresentablePropertyMatcher do
+  it_should_behave_like "a matcher"
+
   let(:property) { :foo }
   subject { Representable::Matchers::RepresentablePropertyMatcher.new(property) }
 

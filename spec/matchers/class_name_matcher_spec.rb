@@ -1,6 +1,8 @@
 require "spec_helper"
 
 describe Representable::Matchers::ClassNameMatcher do
+  it_should_behave_like "a matcher"
+ 
   let(:property) { :foo }
   let(:class_name) { "Person" }
 
