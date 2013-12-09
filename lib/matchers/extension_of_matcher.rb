@@ -23,12 +23,11 @@ module Representable
       private
 
       def matches_extension?
-        debugger
-        @subject.class.ancestors.include? extension
+        @subject.send(:representable_attrs)[property].options[:extend] == extension
       end
 
       def expectation
-        "#{@subject.class} to be a representation of #{expectation}"
+        "#{@subject.class} to be a representation of #{extension}"
       end
     end
   end
