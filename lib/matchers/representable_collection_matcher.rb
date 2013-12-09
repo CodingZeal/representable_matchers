@@ -1,10 +1,9 @@
 module Representable
   module Matchers
-    
-    class RepresentableCollectionMatcher < Struct.new(:property)
+    class RepresentableCollectionMatcher < BaseMatcher
 
       def matches?(subject)
-        @subject = subject
+        super(subject)
         collection?
       end
 

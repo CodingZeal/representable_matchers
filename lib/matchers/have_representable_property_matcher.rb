@@ -6,10 +6,16 @@ module Representable
     end
 
     class HaveRepresentablePropertyMatcher < BaseMatcher
+      include DefinitionMatchers
 
       def initialize(property)
         super(property)
         add_representable_property_submatcher
+      end
+
+      def matches?(subject)
+        super(subject)
+        submatchers_match?
       end
 
       def description

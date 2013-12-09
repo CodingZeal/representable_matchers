@@ -6,19 +6,8 @@ module Representable
         @property = property
       end
 
-      def class_name(class_name)
-        add_submatcher(ClassNameMatcher.new(@property, class_name))
-        self
-      end
-
-      def extends(extension)
-        add_submatcher(ExtensionOfMatcher.new(@property, extension))
-        self
-      end
-
       def matches?(subject)
         @subject = subject
-        submatchers_match?
       end
 
       def description
@@ -31,6 +20,12 @@ module Representable
 
       def failure_message_for_should_not
         submatcher_failure_messages_for_should_not.last or raise "Undefined failure message for should not"
+      end
+
+      protected
+
+      def property
+        @property
       end
 
       private

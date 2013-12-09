@@ -1,10 +1,9 @@
 module Representable
   module Matchers
-
-    class RepresentablePropertyMatcher < Struct.new(:property)
+    class RepresentablePropertyMatcher < BaseMatcher
 
       def matches?(subject)
-        @subject = subject
+        super(subject)
         representable_attribute?
       end
 

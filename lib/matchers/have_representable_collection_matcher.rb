@@ -6,10 +6,16 @@ module Representable
     end
 
     class HaveRepresentableCollectionMatcher < BaseMatcher
+      include DefinitionMatchers
 
       def initialize(property)
         super(property)
         add_representable_collection_submatcher
+      end
+
+      def matches?(subject)
+        super(subject)
+        submatchers_match?
       end
 
       def parse_strategy(strategy)

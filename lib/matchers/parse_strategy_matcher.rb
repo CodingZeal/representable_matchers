@@ -1,10 +1,14 @@
 module Representable
   module Matchers
+    class ParseStrategyMatcher < BaseMatcher
 
-    class ParseStrategyMatcher < Struct.new(:property, :strategy)
+      def initialize(property, strategy)
+        super(property)
+        @strategy = strategy
+      end
 
       def matches?(subject)
-        @subject = subject
+        super(subject)
         matches_strategy?
       end
 
@@ -23,11 +27,11 @@ module Representable
       private
 
       def matches_strategy?
-        @subject.send(:representable_attrs)[property].options[:parse_strategy] == strategy
+        @subject.send(:representable_attrs)[property].options[:parse_strategy] == @strategy
       end
 
       def expectation
-        "#{@subject.class} to be a kind of #{strategy}"
+        "#{@subject.class} to be a kind of #{@strategy}"
       end
     end
   end

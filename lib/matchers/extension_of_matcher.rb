@@ -1,10 +1,14 @@
 module Representable
   module Matchers
-    
-    class ExtensionOfMatcher < Struct.new(:property, :extension)
+    class ExtensionOfMatcher < BaseMatcher
+
+      def initialize(property, extension)
+        super(property)
+        @extension = extension
+      end
 
       def matches?(subject)
-        @subject = subject
+        super(subject)
         matches_extension?
       end
 
@@ -23,11 +27,11 @@ module Representable
       private
 
       def matches_extension?
-        @subject.send(:representable_attrs)[property].options[:extend] == extension
+        @subject.send(:representable_attrs)[property].options[:extend] == @extension
       end
 
       def expectation
-        "#{@subject.class} to be a representation of #{extension}"
+        "#{@subject.class} to be a representation of #{@extension}"
       end
     end
   end
