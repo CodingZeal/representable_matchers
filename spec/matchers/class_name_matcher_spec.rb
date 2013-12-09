@@ -30,10 +30,5 @@ describe Representable::Matchers::ClassNameMatcher do
         expect( subject.matches?(subject_object) ).to be_false
       end
     end
-    
   end
-
-  its(:description) { should be_a_kind_of String }
-  its(:failure_message_for_should) { should be_a_kind_of String }
-  its(:failure_message_for_should_not) { should be_a_kind_of String }
 end
