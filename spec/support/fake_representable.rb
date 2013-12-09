@@ -1,3 +1,6 @@
+module AbstractRepresenter
+end
+
 class FakeRepresentable
   module Representer
     include Representable::JSON
