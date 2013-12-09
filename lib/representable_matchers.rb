@@ -1,4 +1,8 @@
 require "matchers/class_name_matcher"
 require "matchers/extension_of_matcher"
+require "matchers/parse_strategy_matcher"
+require "matchers/base_matcher"
 require "matchers/representable_property_matcher"
+require "matchers/representable_collection_matcher"
 require "matchers/have_representable_property_matcher"
+require "matchers/have_representable_collection_matcher"

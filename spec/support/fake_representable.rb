@@ -4,6 +4,7 @@ class FakeRepresentable
     property :name
     property :class_only, class: String
     property :class_and_extension, class: Array, extend: AbstractRepresenter
+    collection :children, class: Array, extend: AbstractRepresenter, parse_strategy: :sync
   end
 
   def self.representation

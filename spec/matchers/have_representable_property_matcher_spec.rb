@@ -1,10 +1,9 @@
 require "spec_helper"
 
 describe Representable::Matchers do
-  describe "#have_representable_property" do
-    
-    subject { FakeRepresentable.representation }
-    
+  subject { FakeRepresentable.representation }
+  
+  describe "#have_representable_property" do  
     context "without submatchers" do
       it { should have_representable_property(:name) }
       it { should_not have_representable_property(:foo) }
@@ -64,6 +63,6 @@ describe Representable::Matchers::HaveRepresentablePropertyMatcher do
   end
 
   describe "#description" do
-    its(:description) { should be_a_kind_of String }
+    it { expect( subject.description ).to be_a_kind_of String }
   end
 end
