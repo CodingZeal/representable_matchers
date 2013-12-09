@@ -28,7 +28,7 @@ describe Representable::Matchers::HaveRepresentableCollectionMatcher do
   describe "#parse_strategy" do
     let(:parse_strategy) { :sync }
 
-    it "adds a ClassNameMatcher" do
+    it "adds a ParseStrategyMatcher" do
       Representable::Matchers::ParseStrategyMatcher.should_receive(:new).with(property, parse_strategy)
       expect( subject.parse_strategy(parse_strategy) ).to eq(subject)
     end
