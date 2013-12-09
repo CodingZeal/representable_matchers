@@ -3,7 +3,7 @@ class FakeRepresentable
     include Representable::JSON
     property :name
     property :class_only, class: String
-    property :class_and_extension, class: Array
+    property :class_and_extension, class: Array, extend: AbstractRepresenter
   end
 
   def self.representation
