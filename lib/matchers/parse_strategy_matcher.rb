@@ -1,6 +1,6 @@
 module Representable
   module Matchers
-    class ParseStrategyMatcher < BaseMatcher
+    class ParseStrategyMatcher < SubMatcher
 
       def initialize(property, strategy)
         super(property)
@@ -16,14 +16,6 @@ module Representable
         "only allow representable collection to use a specific parse strategy"
       end
 
-      def failure_message_for_should
-        "Expected #{expectation}"
-      end
-
-      def failure_message_for_should_not
-        "Did not expect #{expectation}"
-      end
-
       private
 
       def matches_strategy?
@@ -31,7 +23,7 @@ module Representable
       end
 
       def expectation
-        "#{@subject.class} to be a kind of #{@strategy}"
+        "#{@subject.class} to be using parse strategy #{@strategy}"
       end
     end
   end

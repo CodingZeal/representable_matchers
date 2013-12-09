@@ -1,6 +1,6 @@
 module Representable
   module Matchers
-    class RepresentablePropertyMatcher < BaseMatcher
+    class RepresentablePropertyMatcher < SubMatcher
 
       def matches?(subject)
         super(subject)
@@ -9,14 +9,6 @@ module Representable
 
       def description
         "only allow models with specific representable properties"
-      end
-
-      def failure_message_for_should
-        "Expected #{expectation}"
-      end
-
-      def failure_message_for_should_not
-        "Did not expect #{expectation}"
       end
 
       private

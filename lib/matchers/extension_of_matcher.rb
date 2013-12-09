@@ -1,6 +1,6 @@
 module Representable
   module Matchers
-    class ExtensionOfMatcher < BaseMatcher
+    class ExtensionOfMatcher < SubMatcher
 
       def initialize(property, extension)
         super(property)
@@ -14,14 +14,6 @@ module Representable
 
       def description
         "only allow representable properties extending specific representers"
-      end
-
-      def failure_message_for_should
-        "Expected #{expectation}"
-      end
-
-      def failure_message_for_should_not
-        "Did not expect #{expectation}"
       end
 
       private

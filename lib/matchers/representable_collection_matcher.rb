@@ -1,6 +1,6 @@
 module Representable
   module Matchers
-    class RepresentableCollectionMatcher < BaseMatcher
+    class RepresentableCollectionMatcher < SubMatcher
 
       def matches?(subject)
         super(subject)
@@ -9,14 +9,6 @@ module Representable
 
       def description
         "only allow representable collection"
-      end
-
-      def failure_message_for_should
-        "Expected #{expectation}"
-      end
-
-      def failure_message_for_should_not
-        "Did not expect #{expectation}"
       end
 
       private

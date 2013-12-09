@@ -1,6 +1,6 @@
 module Representable
   module Matchers
-    class KlassMatcher < BaseMatcher
+    class KlassMatcher < SubMatcher
 
       def initialize(property, klass)
         super(property)
@@ -14,14 +14,6 @@ module Representable
 
       def description
         "only allow representable property of a specific class"
-      end
-
-      def failure_message_for_should
-        "Expected #{expectation}"
-      end
-
-      def failure_message_for_should_not
-        "Did not expect #{expectation}"
       end
 
       private
