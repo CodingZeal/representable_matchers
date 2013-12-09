@@ -28,7 +28,7 @@ module Representable
       end
 
       def description
-        # TODO
+        "only allow properties being represented by Representable"
       end
 
       def failure_message_for_should
