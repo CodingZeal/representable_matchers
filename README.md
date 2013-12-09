@@ -25,6 +25,7 @@ Or install it yourself as:
 With submatchers
 
     it { should have_representable_property(:name).class_name("String") }
+    it { should have_representable_property(:class_and_extension).class_name("Array").extends(AbstractRepresenter) }
 
 ## Contributing
 
