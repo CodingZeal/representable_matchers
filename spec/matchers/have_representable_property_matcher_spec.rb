@@ -10,8 +10,8 @@ describe Representable::Matchers do
     end
 
     context "with submatchers" do
-      it { should have_representable_property(:class_only).class_name("String") }
-      it { should have_representable_property(:class_and_extension).class_name("Array").extends(AbstractRepresenter) }
+      it { should have_representable_property(:class_only).klass(String) }
+      it { should have_representable_property(:class_and_extension).klass(Array).extends(AbstractRepresenter) }
     end
   end
 end
@@ -41,24 +41,6 @@ describe Representable::Matchers::HaveRepresentablePropertyMatcher do
     context "when it doesn't match" do
       let(:matches?) { false }
       it { expect( subject.matches?(fake_representation) ).to be_false }
-    end
-  end
-
-  describe "#class_name" do
-    let(:class_name) { "Foo" }
-
-    it "adds a ClassNameMatcher" do
-      Representable::Matchers::ClassNameMatcher.should_receive(:new).with(property, class_name)
-      expect( subject.class_name(class_name) ).to eq(subject)
-    end
-  end
-
-  describe "#extends" do
-    let(:extension) { Representable }
-
-    it "adds a ExtensionOfMatcher" do
-      Representable::Matchers::ExtensionOfMatcher.should_receive(:new).with(property, extension)
-      expect( subject.extends(extension) ).to eq(subject)
     end
   end
 

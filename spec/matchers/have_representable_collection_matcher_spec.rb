@@ -9,7 +9,7 @@ describe Representable::Matchers do
     end
 
     context "with submatchers" do
-      it { should have_representable_collection(:children).class_name("Array").extends(AbstractRepresenter).parse_strategy(:sync) }
+      it { should have_representable_collection(:children).klass(Array).extends(AbstractRepresenter).parse_strategy(:sync) }
     end
   end
 end

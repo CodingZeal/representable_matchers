@@ -1,6 +1,6 @@
 require "matchers/definition_matchers"
 require "matchers/base_matcher"
-require "matchers/class_name_matcher"
+require "matchers/klass_matcher"
 require "matchers/extension_of_matcher"
 require "matchers/parse_strategy_matcher"
 require "matchers/representable_property_matcher"

@@ -1,8 +1,8 @@
 module Representable
   module Matchers
     module DefinitionMatchers
-      def class_name(class_name)
-        add_submatcher(ClassNameMatcher.new(property, class_name))
+      def klass(klass)
+        add_submatcher(KlassMatcher.new(property, klass))
         self
       end
 

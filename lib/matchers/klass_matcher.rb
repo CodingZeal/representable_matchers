@@ -1,10 +1,10 @@
 module Representable
   module Matchers
-    class ClassNameMatcher < BaseMatcher
+    class KlassMatcher < BaseMatcher
 
-      def initialize(property, class_name)
+      def initialize(property, klass)
         super(property)
-        @class_name = class_name
+        @klass = klass
       end
 
       def matches?(subject)
@@ -27,11 +27,11 @@ module Representable
       private
 
       def matches_class?
-        @subject.send(:representable_attrs)[property].options[:class].to_s == @class_name
+        @subject.send(:representable_attrs)[property].options[:class] == @klass
       end
 
       def expectation
-        "#{@subject.class} to be a kind of #{@class_name}"
+        "#{@subject.class} to be a kind of #{@klass}"
       end
     end
   end

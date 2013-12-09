@@ -4,16 +4,19 @@ class Fake < Representable::Matchers::BaseMatcher
   include Representable::Matchers::DefinitionMatchers
 end
 
+class Foo
+end
+
 describe Representable::Matchers::DefinitionMatchers do
   subject { Fake.new(property) }
   let(:property) { :foo }
 
-  describe "#class_name" do
-    let(:class_name) { "Foo" }
+  describe "#klass" do
+    let(:klass) { Foo }
 
-    it "adds a ClassNameMatcher" do
-      Representable::Matchers::ClassNameMatcher.should_receive(:new).with(property, class_name)
-      expect( subject.class_name(class_name) ).to eq(subject)
+    it "adds a KlassMatcher" do
+      Representable::Matchers::KlassMatcher.should_receive(:new).with(property, klass)
+      expect( subject.klass(klass) ).to eq(subject)
     end
   end
 

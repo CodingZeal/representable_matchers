@@ -25,9 +25,9 @@ Or install it yourself as:
 
 With submatchers
 
-    it { should have_representable_property(:name).class_name("String") }
-    it { should have_representable_property(:class_and_extension).class_name("Array").extends(AbstractRepresenter) }
-    it { should have_representable_collection(:children).class_name("Array").extends(AbstractRepresenter).parse_strategy(:sync) }
+    it { should have_representable_property(:name).klass(String) }
+    it { should have_representable_property(:class_and_extension).klass(Array).extends(AbstractRepresenter) }
+    it { should have_representable_collection(:children).klass(Array).extends(AbstractRepresenter).parse_strategy(:sync) }
 
 ## Contributing
 
