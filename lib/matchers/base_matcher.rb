@@ -2,8 +2,10 @@ module Representable
   module Matchers
     class BaseMatcher
 
-      def initialize(property)
-        @property = property
+      def initialize(property=nil)
+        if not property.nil?
+          @property = property 
+        end
       end
 
       def matches?(subject)
