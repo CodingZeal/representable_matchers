@@ -1,9 +1,5 @@
 module Representable
   module Matchers
-    def render_json
-      RenderJsonMatcher.new
-    end
-
     class RenderJsonMatcher < SubMatcher
       def matches?(subject)
         @subject = subject
