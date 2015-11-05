@@ -19,15 +19,17 @@ Or install it yourself as:
     $ gem install representable_matchers
 
 ## Usage
-
-    it { should have_representable_property(:name) }
-    it { should have_representable_collection(:children) }
+```ruby
+it { should have_representable_property(:name) }
+it { should have_representable_collection(:children) }
+```
 
 With submatchers
-
+```ruby
     it { should have_representable_property(:name).klass(String) }
     it { should have_representable_property(:class_and_extension).klass(Array).extends(AbstractRepresenter) }
     it { should have_representable_collection(:children).klass(Array).extends(AbstractRepresenter).parse_strategy(:sync) }
+```
 
 ## Credits
 
