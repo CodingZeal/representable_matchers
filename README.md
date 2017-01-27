@@ -30,15 +30,12 @@ With submatchers
     it { should have_representable_property(:class_and_extension).klass(Array).extends(AbstractRepresenter) }
     it { should have_representable_collection(:children).klass(Array).extends(AbstractRepresenter).parse_strategy(:sync) }
 ```
+## License
 
-## Credits
+Authored by the Engineering Team of [Coding ZEAL](https://codingzeal.com?utm_source=github)
 
-Authored by Adam Cuppy (@acuppy) of Coding ZEAL (http://codingzeal.com)
+Copyright (c) 2017 Zeal, LLC.  Licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-![Coding ZEAL](https://googledrive.com/host/0B3TWa6M1MsWeWmxRZWhscllwTzA/ZEAL-logo-final-150.png)
-
-This is freely distributed under the MIT license.  Use it, modify it,
-enjoy :)
 
 ## Contributing
 
